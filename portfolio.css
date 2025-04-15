@@ -3,6 +3,31 @@ body{
     overflow-x: hidden;
     height: auto;
 }
+/* #loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #eee;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+} */
+
 .navcontainer{
   background-color: #fff;
   padding: 20px;
@@ -172,7 +197,6 @@ margin-left: -40px;
           object-fit: contain;
           border-radius: 10px;
         }
-
         .lightbox-caption {
           margin-top: 10px;
           font-size: 24px;
@@ -385,7 +409,7 @@ font-variation-settings:
         width: 100%;
         background-color: hsl(0, 0%, 97%);
         padding-left: 20px;
-        padding-right: 0px;
+        padding-right: 20px;
         padding-top: 20px;
         padding-bottom: 10px;
         text-align: center;
@@ -463,7 +487,7 @@ font-variation-settings:
     
       .navcontainer > nav > ul > li {
         margin-bottom: 6px;
-        font-size: 8px;
+        font-size: 10px;
       }
     
       #home > .myimage {
@@ -476,7 +500,7 @@ font-variation-settings:
         height: 50px;
         margin-top: 6px;
      margin-left: -25px;
-        background-color: red;
+        /* background-color: red; */
         /* padding-top: -10px; */
       }
     }
@@ -493,7 +517,7 @@ font-variation-settings:
       }
     
       .navcontainer > nav > ul {
-        font-size: 12px;
+        font-size: 15px;
         margin-right: 0;
       } 
       #home > .myimage {
@@ -504,26 +528,32 @@ font-variation-settings:
       #projects > h1,
       #about > h1,
       #contact > h1 {
-        font-size: 30px;
+        font-size: 24px;
       }
     }
       @media (max-width: 480px) {
         .navcontainer > .logoimage {
           width: 80px; /* Logo takes up more space on small screens */
-          height: 40px;
-          margin-top: 7px;
-          margin-left: 0;
+          height: 70px;
+          top: 7%;
+          margin-top: 0px;
+          margin-left: -20px;
+        
           /* margin-bottom: -20px; */
-        }
+        
+      }
+        #home > #myname >.myname{
+          font-size: 20px;
     }
-    
+  }
     /* For Small Mobile Screens */
     @media (max-width: 320px) {
       .navcontainer > .logoimage {
         width: 90px; /* Slightly larger for very small screens */
-        height: 30px;
+        height: 40px;
         margin-left: 0;
         margin-bottom: 0px;
+        top:2%
       }
     
       #home > .myimage {
@@ -534,7 +564,7 @@ font-variation-settings:
       .navcontainer > nav > ul {
         /* flex-direction: column; */
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
       }
     }
     /* For screens smaller than 1200px */
@@ -617,17 +647,28 @@ font-variation-settings:
   }
 
   #about > h4 {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   #about > .div1 > #div3 {
     font-size: 14px;
     max-width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: center; /* or space-between / space-around */
+    flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
+    gap: 15px; 
   }
-
+   #about > .div1 > #div3 >ul>li>i {
+    /* font-size: 17px; */
+          list-style-type: none;
+     /* display: block; */
+     align-items: left;
+        }
   #about > .div1 > #div4 > p {
     font-size: 14px;
     max-width: 100%;
+    text-align: justify;
   }
 }
 @media (max-width: 1200px) {
@@ -683,7 +724,7 @@ font-variation-settings:
   }
 
   #contact > h1 {
-    font-size: 28px; /* Adjust font size for smaller devices */
+    font-size: 24px /* Adjust font size for smaller devices */
   }
 
   input, select, textarea {
@@ -703,7 +744,7 @@ font-variation-settings:
   .contactsection {
     padding: 10px;
     max-width: 90%; /* Ensure full width usage on very small screens */
-    background-color: red;
+/*     background-color: red; */
   }
 
   #contact > h1 {
@@ -719,5 +760,71 @@ font-variation-settings:
     font-size: 12px;
     padding: 6px; /* Smaller button padding */
   }
+}
+@media (max-width: 480px) {
+  /* footer{
+    height: 50px;
+  } */
+  footer>.social-icons{
+   margin-bottom: 0%;
+  }
+  footer>.copyright-section{
+    text-align: center;
+    /* align-items: center; */
+    margin-left: 0%;
+    padding-right: 8%;
+    padding-bottom: 0px;
+
+  }
+  .lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: none;
+        }
+        
+        .lightbox-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+        
+        .lightbox-image {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 10px;
+        }
+
+        .lightbox-caption {
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        
+        .close {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 30px;
+          font-weight: bold;
+          cursor: pointer;
+          background-color: red;
+          border-radius: 5px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        
 }
 
