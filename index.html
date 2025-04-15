@@ -15,9 +15,6 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
 <body>
-  <!-- <div id="loader-overlay">
-    <div class="spinner"></div>
-  </div> -->
     <div class="container">
       <section id="home" class="homesection">
         <header>
@@ -166,34 +163,7 @@
 </body>
 </html>
  <script>
-  
-  // window.addEventListener("load", function() {
-  //   const loader = document.getElementById("loader-overlay");
-
-  //   // Minimum time to show the loader (in milliseconds)
-  //   const minDisplayTime = 3000; // 2 seconds
-
-  //   // Delay hiding the loader
-  //   setTimeout(() => {
-  //     loader.style.display = "none";
-  //   }, minDisplayTime);
-  //   typeWriter();
-  // });
-
-
-  // Add event listener to navigation links
-  document.addEventListener('DOMContentLoaded', function() {
-     const navLinks = document.querySelectorAll('.navcontainer a');
-     navLinks.forEach(link => {
-         link.addEventListener('click', function() {
-             const targetId = link.getAttribute('href');
-             const targetElement = document.querySelector(targetId);
-             targetElement.scrollIntoView({ behavior: 'smooth' });
-         });
-     });
- });
- 
-const theP = document.getElementsByClassName("myname")[0];
+  const theP = document.getElementsByClassName("myname")[0];
 const myName = "Hey! I am Winifred.";
 let index = 0;
  
@@ -208,6 +178,19 @@ if(index < myName.length){
 index++
  }
  typeWriter()
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+     const navLinks = document.querySelectorAll('.navcontainer a');
+     navLinks.forEach(link => {
+         link.addEventListener('click', function() {
+             const targetId = link.getAttribute('href');
+             const targetElement = document.querySelector(targetId);
+             targetElement.scrollIntoView({ behavior: 'smooth' });
+         });
+     });
+ });
+ 
 
 
 const arrow = document.getElementById("arrow");
